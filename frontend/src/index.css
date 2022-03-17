@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+.DisplayContent {
+    display: inline-flex;
+    width: 100%;
+    margin: 1% 0% 1% 02%;
+    padding: 1px 0% 5% 1%;
+
+}
+
+p {
+    padding: 1% 0% 0% 3%;
+}
+
+.Playlist {
+    padding: 2% 2% 2% 1%;
+    border: 2px solid black;
+    margin: 2% 0% 0% 02%;
+    width: 40%;
+    border-radius: 15px;
+
+}
+
+.API {
+    padding: 2% 2% 2% 1%;
+    border: 2px solid black;
+    width: 40%;
+    border-radius: 15px;
+    margin: 2% 0% 15% 3%;
+}
+
+table, th, td {
+
+    border: 1px solid black;
+    padding: 8px;
+}

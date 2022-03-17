@@ -1,0 +1,23 @@
+label {
+    display: inline-block;
+    text-align: right;
+    width: 100px;
+}
+
+input {
+    width: 200px;
+}
+
+td,
+th {
+    border: 1px solid black;
+}
+
+Playlist {
+    padding: 2% 2% 2% 1%;
+    border: 2px solid black;
+    margin: 2% 0% 0% 02%;
+    width: 40%;
+    border-radius: 15px;
+    margin: 2% 0% 15% 0%;
+}

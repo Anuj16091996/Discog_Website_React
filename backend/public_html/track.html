@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My playlist</title>
+    <link href="/index.css" rel="stylesheet">
+</head>
+
+<body>
+    <div className='Playlist'>
+        <h4>My Playlist</h4>
+        Server message: <b><span id="status">Waiting user action</span></b><br>
+        <button onclick="getTracks()">Get all tracks</button><br>
+        <div id="trackslist"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    /* FETCH *************************************************************************************/
+    // Show All tracks
+    function getTracks() {
+        document.getElementById('status').innerHTML = 'Waiting for server'
+        fetch('http://localhost:8000/track',
+            {
+                method: 'GET'
+            }
+        )
+            .then(res => res.json())// here server sends JSON response
+            .then(
+                (res) => {
+                    // TO DO how to handle code other than 200 because this gets
+                    // executed in all cases
+                    const tracks = res.track;
+                    console.log(tracks)
+                    let html = ''
+                    html += '<table>'
+                    for (let i = 0; i < tracks.length; i++) {
+                        html += '<tr>'
+                        html += '<td>' + tracks[i].title + '<br/>' + 'id: ' + tracks[i].id + '<br/>' + 'playlist: ' + tracks[i].playlist_title + '<br/>' + tracks[i].uri + '<br/>' + tracks[i].master_id + '</td>'
+                        html += '</tr>'
+                    }
+                    html += '</table>'
+
+                    document.getElementById('trackslist').innerHTML = html
+                    document.getElementById('status').innerHTML = res.msg
+                },
+                (error) => {
+                    // only NO RESPONSE URL errors will trigger this code
+                    document.getElementById('status').innerHTML = 'AJAX error: URL wrong or unreachable, see console'
+                }
+            )
+    }
+</script>
